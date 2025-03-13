@@ -95,7 +95,7 @@ img {
   padding: 5rem 2rem;
   color: var(--clr-light);
   background-image: url("./assets/alessandro-erbetta-RPcIkOzN0iQ-unsplash.jpg");
-  background-size: 100% auto;
+  background-size: cover;
 }
 .hero::before {
   content: "";
