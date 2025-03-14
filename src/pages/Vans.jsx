@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import VanItem from "../components/VanItem"
+import Badge from "../components/Badge"
 
 export default function Vans() {
   const [vans, setVans] = useState([])
@@ -16,11 +16,22 @@ export default function Vans() {
       .catch(e => console.log(e))
   }, [])
 
+  const vanItems = vans.map(van => (
+    <div className="van-item">
+      <img className="van-item__image" src={van.imageUrl} alt="A van" />
+      <div className="van-item__container">
+        <p className="van-item__name">{van.name}</p>
+        <p className="van-item__price">${van.price}<br/><span>/day</span></p>
+      </div>
+      <Badge variant={van.type}>{van.type}</Badge>
+    </div>
+  ))
+
   return (
     <div className="padded flow">
       <h1>Explore our van options</h1>
       {vans && <div className="van-list">
-        {vans.map(van => <VanItem key={van.id} {...van} />)}
+        {vanItems}
       </div>}
     </div>
   )
