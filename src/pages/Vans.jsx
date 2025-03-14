@@ -23,7 +23,7 @@ export default function Vans() {
         <img className="van-item__image" src={van.imageUrl} alt="A van" />
         <div className="van-item__container">
           <p className="van-item__name">{van.name}</p>
-          <p className="van-item__price">${van.price}<br/><span>/day</span></p>
+          <p className="van-item__price">${van.price}<span>/day</span></p>
         </div>
         <Badge variant={van.type}>{van.type}</Badge>
       </Link>

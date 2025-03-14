@@ -58,7 +58,7 @@ img {
 }
 
 .wrapper {
-  width: min(540px, 100vw - 2rem);
+  width: min(540px, 100vw - 1rem);
 
   background-color: var(--clr-mid);
   border: 6px solid var(--clr-light);
@@ -141,7 +141,7 @@ img {
   margin-top: 1.25em;
 }
 
-.cta {
+.cta, .btn {
   display: inline-block;
   width: 100%;
   padding: 1rem 1.5rem;
@@ -156,8 +156,12 @@ img {
   border: none;
   cursor: pointer;
 }
-.cta:hover {
+.cta:hover, .btn:hover {
   text-decoration: none;
+}
+.btn {
+  background-color: var(--clr-dark);
+  color: var(--clr-light);
 }
 
 .text-center {
@@ -171,15 +175,12 @@ img {
 .van-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem 1rem;
+  gap: 2rem 1rem;
+  margin-bottom: 2rem;
 }
 
-.van-item {
-
-}
 .van-item .badge {
-  position: relative;
-  top: -.5rem;
+  margin-top: .75rem;
 }
 .van-item a:hover {
   text-decoration: none;
@@ -193,11 +194,12 @@ img {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: .5rem;
   margin-top: .75rem;
 }
 .van-item__name,
 .van-item__price {
-  font-weight: 700;
   line-height: 1;
 }
 a:hover .van-item__name {
