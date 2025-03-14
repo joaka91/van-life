@@ -5,6 +5,9 @@ import Home from "./pages/Home"
 import About from "./pages/About"
 import Vans from "./pages/Vans"
 
+import makeServer from "./server"
+makeServer()
+
 function Header() {
   return (
     <header className="site-header">
