@@ -129,7 +129,7 @@ img {
 }
 
 .padded {
-  padding: 1.75rem;
+  padding: 1.5rem;
 }
 .accent {
   padding: 2rem;
@@ -166,7 +166,7 @@ img {
 .van-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem 1rem;
+  gap: 1.5rem 1rem;
 }
 
 .van-item {
