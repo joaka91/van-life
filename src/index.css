@@ -165,7 +165,7 @@ img {
 .van-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: .5rem;
+  gap: 2rem .5rem;
 }
 
 .van-item {
@@ -187,15 +187,27 @@ img {
   font-weight: 700;
   line-height: 1;
 }
+.van-item__price {
+  text-align: right;
+}
 .van-item__price > span {
   font-weight: 400;
   font-size: .75rem;
 }
+.van-item .badge {
+  position: relative;
+  top: -.5rem;
+}
 
 .badge {
-  padding: .5rem 1rem;
-  font-size: .875rem;
-  border-radius: .5rem;
+  padding: .25rem .75rem;
+  max-width: max-content;
+
+  font-size: .75rem;
+  font-weight: 500;
+  text-transform: capitalize;
+
+  border-radius: .25rem;
   color: var(--clr-light);
 }
 .badge--luxury {

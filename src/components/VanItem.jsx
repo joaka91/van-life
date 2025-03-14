@@ -1,3 +1,5 @@
+import Badge from "./Badge"
+
 export default function VanItem({ imageUrl, name, price, type }) {
   return (
     <div className="van-item">
@@ -6,7 +8,7 @@ export default function VanItem({ imageUrl, name, price, type }) {
         <p className="van-item__name">{name}</p>
         <p className="van-item__price">${price}<br/><span>/day</span></p>
       </div>
-      {type && <div className="van-item__type">{type}</div>}
+      <Badge variant={type}>{type}</Badge>
     </div>
   )
 }
