@@ -161,3 +161,33 @@ img {
 .separator {
   height: 1px;
 }
+
+.van-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .5rem;
+}
+
+.van-item {
+
+}
+.van-item__image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: .5rem;
+}
+.van-item__container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: .75rem;
+}
+.van-item__name,
+.van-item__price {
+  font-weight: 700;
+  line-height: 1;
+}
+.van-item__price > span {
+  font-weight: 400;
+  font-size: .75rem;
+}

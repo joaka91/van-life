@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import VanItem from "../components/VanItem"
 
 export default function Vans() {
   const [vans, setVans] = useState([])
@@ -15,11 +16,12 @@ export default function Vans() {
       .catch(e => console.log(e))
   }, [])
 
-  console.log(vans)
-
   return (
     <>
-      <h1>Vans</h1>
+      <h1>Explore our van options</h1>
+      {vans && <div className="van-list">
+        {vans.map(van => <VanItem key={van.id} {...van} />)}
+      </div>}
     </>
   )
 }
