@@ -227,3 +227,32 @@ a:hover .van-item__name {
 .badge--rugged {
   background-color: seagreen;
 }
+
+.van .badge {
+  margin-top: 1.5rem;
+}
+.van .cta {
+  margin-block: 2rem;
+}
+.van__image {
+  border-radius: .5rem;
+}
+.van__name,
+.van__price {
+  font-weight: 700;
+}
+.van__name {
+  margin-top: 1rem;
+  font-size: 2rem;
+}
+.van__price {
+  margin-top: .25rem;
+  font-size: 1.25rem;
+}
+.van__price span {
+  font-weight: 400;
+  font-size: .875rem;
+}
+.van__description {
+  margin-top: 1rem;
+}

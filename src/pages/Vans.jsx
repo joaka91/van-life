@@ -14,11 +14,11 @@ export default function Vans() {
         return res.json()
       })
       .then(json =>setVans(json.vans))
-      .catch(e => console.log(e))
+      .catch(e => console.error(e))
   }, [])
 
   const vanItems = vans.map(van => (
-    <div className="van-item">
+    <div key={van.id} className="van-item">
       <Link to={`/vans/${van.id}`}>
         <img className="van-item__image" src={van.imageUrl} alt="A van" />
         <div className="van-item__container">
