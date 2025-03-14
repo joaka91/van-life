@@ -26,7 +26,7 @@ export default function Van() {
         <h2 className="van__name">{van.name}</h2>
         <p className="van__price">${van.price}<span>/day</span></p>
         <p className="van__description">{van.description}</p>
-        <p className="cta">Rent this van</p>
+        <button className="cta">Rent this van</button>
       </div>}
     </>
   )

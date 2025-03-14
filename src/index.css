@@ -141,18 +141,23 @@ img {
   margin-top: 1.25em;
 }
 
-.cta, .btn {
+.cta {
   display: inline-block;
   width: 100%;
   padding: 1rem 1.5rem;
 
+  font: inherit;
+  font-weight: 700;
   text-align: center;
+
   background-color: var(--clr-accent);
   color: var(--clr-light);
   border-radius: .375rem;
+  border: none;
+  cursor: pointer;
 }
-.btn {
-  background-color: var(--clr-dark);
+.cta:hover {
+  text-decoration: none;
 }
 
 .text-center {
