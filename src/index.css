@@ -117,6 +117,7 @@ img {
 
 .site-footer {
   padding: 2rem;
+  font-size: .875rem;
   text-align: center;
   color: var(--clr-light);
   background-color: var(--clr-dark);
@@ -127,10 +128,10 @@ img {
   aspect-ratio: 3 / 1;
 }
 
-.section {
-  padding: 2rem;
+.padded {
+  padding: 1.75rem;
 }
-.subsection {
+.accent {
   padding: 2rem;
   background-color: var(--clr-accent);
   border-radius: .25rem;
@@ -165,7 +166,7 @@ img {
 .van-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem .5rem;
+  gap: 2rem 1rem;
 }
 
 .van-item {

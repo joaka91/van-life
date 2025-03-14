@@ -17,11 +17,11 @@ export default function Vans() {
   }, [])
 
   return (
-    <>
+    <div className="padded flow">
       <h1>Explore our van options</h1>
       {vans && <div className="van-list">
         {vans.map(van => <VanItem key={van.id} {...van} />)}
       </div>}
-    </>
+    </div>
   )
 }
