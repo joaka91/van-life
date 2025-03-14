@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router"
 import Badge from "../components/Badge"
 
 export default function Vans() {
@@ -18,12 +19,14 @@ export default function Vans() {
 
   const vanItems = vans.map(van => (
     <div className="van-item">
-      <img className="van-item__image" src={van.imageUrl} alt="A van" />
-      <div className="van-item__container">
-        <p className="van-item__name">{van.name}</p>
-        <p className="van-item__price">${van.price}<br/><span>/day</span></p>
-      </div>
-      <Badge variant={van.type}>{van.type}</Badge>
+      <Link to={`/vans/${van.id}`}>
+        <img className="van-item__image" src={van.imageUrl} alt="A van" />
+        <div className="van-item__container">
+          <p className="van-item__name">{van.name}</p>
+          <p className="van-item__price">${van.price}<br/><span>/day</span></p>
+        </div>
+        <Badge variant={van.type}>{van.type}</Badge>
+      </Link>
     </div>
   ))
 

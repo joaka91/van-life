@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router'
 import Home from "./pages/Home"
 import About from "./pages/About"
 import Vans from "./pages/Vans"
+import Van from "./pages/Van"
 
 import makeServer from "./server"
 makeServer()
@@ -38,6 +39,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/vans" element={<Vans />} />
+            <Route path="/vans/:id" element={<Van />} />
           </Routes>
         </main>
         <Footer />
