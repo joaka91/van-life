@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router"
-import Badge from "../components/Badge"
+import Badge from "../../components/Badge"
 
 export default function Vans() {
   const [vans, setVans] = useState([])

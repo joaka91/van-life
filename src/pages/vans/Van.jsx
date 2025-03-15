@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router"
-import Badge from "../components/Badge"
+import Badge from "../../components/Badge"
 
 export default function Van() {
   const [van, setVan] = useState(null)
