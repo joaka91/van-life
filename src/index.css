@@ -271,3 +271,66 @@ a:hover .van-item__name {
 .van__description {
   margin-top: 1rem;
 }
+
+.host-van-list {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  margin-bottom: 2rem;
+}
+
+.host-van-item {
+  background-color: var(--clr-light);
+  border-radius: .5rem;
+}
+.host-van-item__inner {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  padding: 1rem;
+}
+.host-van-item__image {
+  width: 75px;
+  aspect-ratio: 1 / 1;
+  border-radius: .25rem;
+  overflow: hidden;
+}
+.host-van-item__name {
+  font-size: 1.125rem;
+}
+.host-van-item__price {
+  font-weight: 500;
+  opacity: .75;
+}
+
+.host-van {
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  background-color: var(--clr-light);
+  border-radius: .5rem;
+}
+.host-van__top {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+.host-van__image {
+  width: min(40%, 300px);
+  border-radius: .25rem;
+  overflow: hidden;
+}
+.host-van__name,
+.host-van__price {
+  font-weight: 700;
+}
+.host-van__name {
+  margin-top: 1rem;
+}
+.host-van__price {
+  margin-top: .25rem;
+}
+.host-van__price span {
+  font-weight: 400;
+  font-size: .875rem;
+}
