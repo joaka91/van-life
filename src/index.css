@@ -312,11 +312,15 @@ a:hover .van-item__name {
 }
 .host-van__top {
   display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
   align-items: center;
 }
+.host-van__top-content {
+  flex: 3 0 max-content;
+}
 .host-van__image {
-  width: min(40%, 300px);
+  flex: 1 0 40%;
   border-radius: .25rem;
   overflow: hidden;
 }
