@@ -280,15 +280,14 @@ a:hover .van-item__name {
 }
 
 .host-van-item {
-  background-color: var(--clr-light);
-  border-radius: .5rem;
-}
-.host-van-item__inner {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 1.25rem;
   padding: 1rem;
+
+  background-color: var(--clr-light);
+  border-radius: .5rem;
 }
 .host-van-item__image {
   width: 75px;
