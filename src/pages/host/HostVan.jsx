@@ -14,7 +14,7 @@ export default function HostVan() {
         }
         return res.json()
       })
-      .then(json => setVan(json.vans[0]))
+      .then(json => setVan(json.van))
       .catch(e => console.error(e))
   }, [])
 
