@@ -5,9 +5,9 @@ export default function Header() {
     <header className="site-header padded">
       <Link to="/" className="site-header__logo">#VANLIFE</Link>
       <nav className="site-header__nav">
-        <NavLink to="/host">Host</NavLink>
-        <NavLink to="/about">About</NavLink>
-        <NavLink to="/vans">Vans</NavLink>
+        <NavLink to="host">Host</NavLink>
+        <NavLink to="about">About</NavLink>
+        <NavLink to="vans">Vans</NavLink>
       </nav>
     </header>
   )
