@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router"
+import { Link, useParams } from "react-router"
 import Badge from "../../components/Badge"
 
 export default function HostVan() {
@@ -20,6 +20,7 @@ export default function HostVan() {
 
   return (
     <>
+      <Link to=".." className="back-link">&larr; Back to all vans</Link>
       {van && <div className="host-van flow">
         <div className="host-van__top">
           <div className="host-van__image"><img src={van.imageUrl} alt="Van" /></div>

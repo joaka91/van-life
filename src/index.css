@@ -338,3 +338,13 @@ a:hover .van-item__name {
   font-weight: 400;
   font-size: .875rem;
 }
+
+.back-link {
+  display: inline-block;
+  font-size: .875rem;
+  font-weight: 500;
+  opacity: .75;
+}
+.back-link:hover {
+  opacity: 1;
+}
