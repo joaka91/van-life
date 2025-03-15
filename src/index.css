@@ -57,6 +57,20 @@ img {
   object-fit: cover;
 }
 
+nav {
+  display: flex;
+  gap: 1rem;
+  font-size: .875rem;
+}
+nav a {
+  opacity: .375;
+  transition: opacity 250ms;
+}
+nav a:hover,
+nav a.active {
+  opacity: 1;
+}
+
 .wrapper {
   width: min(540px, 100vw - 1rem);
 
@@ -79,20 +93,9 @@ img {
   font-weight: 900;
 }
 .site-header__nav {
-  display: flex;
-  gap: 1rem;
   margin-bottom: .125em;
-  font-size: .875rem;
 }
-.site-header__nav a {
-  position: relative;
-  opacity: .375;
-  transition: opacity 250ms;
-}
-.site-header__nav a:hover,
-.site-header__nav a.active {
-  opacity: 1;
-}
+
 
 .hero {
   position: relative;

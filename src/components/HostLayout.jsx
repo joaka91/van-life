@@ -1,12 +1,12 @@
-import { Link, Outlet } from "react-router";
+import { NavLink, Outlet } from "react-router";
 
 export default function HostLayout() {
   return (
     <div className="padded">
-      <nav className="page-nav" aria-label="Sub-navigation">
-        <Link to="/host">Dashboard</Link>
-        <Link to="/host/income">Income</Link>
-        <Link to="/host/reviews">Reviews</Link>
+      <nav>
+        <NavLink to="/host" end>Dashboard</NavLink>
+        <NavLink to="/host/income">Income</NavLink>
+        <NavLink to="/host/reviews">Reviews</NavLink>
       </nav>
       <Outlet />
     </div>
