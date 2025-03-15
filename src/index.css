@@ -79,7 +79,7 @@ img {
 }
 .site-header__nav {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 .site-header__nav a {
   opacity: .5;
