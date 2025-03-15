@@ -3,7 +3,7 @@ import { NavLink, Outlet } from "react-router";
 export default function HostLayout() {
   return (
     <div className="padded flow">
-      <nav>
+      <nav className="subnav">
         <NavLink to="." end>Dashboard</NavLink>
         <NavLink to="income">Income</NavLink>
         <NavLink to="vans">Vans</NavLink>

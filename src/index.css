@@ -348,3 +348,9 @@ a:hover .van-item__name {
 .back-link:hover {
   opacity: 1;
 }
+
+.subnav {
+  padding-bottom: .5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid hsl(0 0% 0% / .25);
+}
