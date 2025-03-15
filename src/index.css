@@ -343,7 +343,7 @@ a:hover .van-item__name {
   display: inline-block;
   font-size: .875rem;
   font-weight: 500;
-  opacity: .75;
+  opacity: .5;
 }
 .back-link:hover {
   opacity: 1;
