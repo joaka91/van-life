@@ -71,7 +71,8 @@ img {
 .site-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
+  line-height: 1;
 }
 .site-header__logo {
   font-size: 1.5rem;
@@ -80,11 +81,16 @@ img {
 .site-header__nav {
   display: flex;
   gap: 1rem;
+  margin-bottom: .125em;
+  font-size: .875rem;
 }
 .site-header__nav a {
-  opacity: .5;
+  position: relative;
+  opacity: .375;
+  transition: opacity 250ms;
 }
-.site-header__nav a:hover {
+.site-header__nav a:hover,
+.site-header__nav a.active {
   opacity: 1;
 }
 
