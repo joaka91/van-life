@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Link, useParams } from "react-router"
+import { Link, useParams, Outlet, NavLink } from "react-router"
 import Badge from "../../components/Badge"
 
 export default function HostVan() {
@@ -30,11 +30,16 @@ export default function HostVan() {
             <p className="host-van__price">${van.price}<span>/day</span></p>
           </div>
         </div>
-        <div className="host-van__nav">(Navbar goes here)</div>
-        <p><strong>Name:</strong> {van.name}</p>
+        <nav className="host-van__nav subnav">
+          <NavLink to="." end>Details</NavLink>
+          <NavLink to="pricing">Pricing</NavLink>
+          <NavLink to="photos">Photos</NavLink>
+        </nav>
+        <Outlet />
+        {/* <p><strong>Name:</strong> {van.name}</p>
         <p><strong>Category:</strong> <span style={{textTransform: "capitalize"}}>{van.type}</span></p>
         <p><strong>Description:</strong> {van.description}</p>
-        <p><strong>Visibility:</strong> Public</p>
+        <p><strong>Visibility:</strong> Public</p> */}
       </div>}
     </>
   )
