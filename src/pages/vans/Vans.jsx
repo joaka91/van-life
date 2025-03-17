@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
-import { Link } from "react-router"
+import { Link, useSearchParams } from "react-router"
 import Badge from "../../components/Badge"
+import clsx from "clsx"
 
 export default function Vans() {
   const [vans, setVans] = useState([])
@@ -17,7 +18,13 @@ export default function Vans() {
       .catch(e => console.error(e))
   }, [])
 
-  const vanItems = vans.map(van => (
+  const [searchParams, setSearchParams] = useSearchParams()
+  const typeFilter = searchParams.getAll("type")
+  console.log(typeFilter)
+
+  const vansToShow = typeFilter.length > 0 ? vans.filter(van => typeFilter.includes(van.type)) : vans
+
+  const vanItems = vansToShow.map(van => (
     <div key={van.id} className="van-item">
       <Link to={`/vans/${van.id}`}>
         <img className="van-item__image" src={van.imageUrl} alt="A van" />
@@ -30,9 +37,40 @@ export default function Vans() {
     </div>
   ))
 
+  function handleFilter(e) {
+    const value = e.currentTarget?.value
+    if (!value) {
+      return
+    }
+    setSearchParams(sp => {
+      if (value === "clear") {
+        sp.delete("type")
+      } else {
+        sp.has("type", value) ? sp.delete("type", value) : sp.append("type", value)
+      }
+      return sp
+    })
+  }
+
+  function filterButton(value) {
+    const isActiveFilter = typeFilter.length > 0 && typeFilter.includes(value)
+    const classes = clsx("filter-button", isActiveFilter && "filter-button--active")
+    return (
+      <button className={classes} onClick={handleFilter} value={value}>
+        <Badge variant={isActiveFilter && value}>{value}</Badge>
+      </button>
+    )
+  }
+
   return (
     <div className="padded flow">
       <h1>Explore our van options</h1>
+      <div className="van-list-filter">
+        {filterButton("simple")}
+        {filterButton("luxury")}
+        {filterButton("rugged")}
+        {typeFilter.length > 0 && <button onClick={handleFilter} value="clear" className="clear-filters-button">Clear filters</button>}
+      </div>
       {vans && <div className="van-list">
         {vanItems}
       </div>}
