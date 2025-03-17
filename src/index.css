@@ -275,20 +275,15 @@ a:hover .van-item__name {
 .host-van-list {
   display: flex;
   flex-direction: column;
-  gap: .75rem;
+  gap: 1.5rem;
   margin-bottom: 2rem;
 }
 
-.host-van-item {
-  background-color: var(--clr-light);
-  border-radius: .5rem;
-}
 .host-van-item__inner {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 1.25rem;
-  padding: 1rem;
 }
 .host-van-item__image {
   width: 75px;
@@ -305,9 +300,7 @@ a:hover .van-item__name {
 }
 
 .host-van {
-  padding: 1.5rem;
   margin-bottom: 2rem;
-  background-color: var(--clr-light);
   border-radius: .5rem;
 }
 .host-van__top {
