@@ -35,11 +35,7 @@ export default function HostVan() {
           <NavLink to="pricing">Pricing</NavLink>
           <NavLink to="photos">Photos</NavLink>
         </nav>
-        <Outlet />
-        {/* <p><strong>Name:</strong> {van.name}</p>
-        <p><strong>Category:</strong> <span style={{textTransform: "capitalize"}}>{van.type}</span></p>
-        <p><strong>Description:</strong> {van.description}</p>
-        <p><strong>Visibility:</strong> Public</p> */}
+        <Outlet context={van} />
       </div>}
     </>
   )

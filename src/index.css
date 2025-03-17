@@ -332,6 +332,15 @@ a:hover .van-item__name {
   font-size: .875rem;
 }
 
+.host-van-pricing span {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.host-van-photo {
+  width: 75px;
+  border-radius: .25rem;
+}
+
 .back-link {
   display: inline-block;
   font-size: .875rem;
