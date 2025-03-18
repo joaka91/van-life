@@ -21,6 +21,21 @@ export default function Vans() {
   const [searchParams, setSearchParams] = useSearchParams()
   const typeFilter = searchParams.getAll("type")
 
+  const vansToShow = typeFilter.length > 0 ? vans.filter(van => typeFilter.includes(van.type)) : vans
+
+  const vanItems = vansToShow.map(van => (
+    <div key={van.id} className="van-item">
+      <Link to={`${van.id}`}>
+        <img className="van-item__image" src={van.imageUrl} alt="A van" />
+        <div className="van-item__container">
+          <p className="van-item__name">{van.name}</p>
+          <p className="van-item__price">${van.price}<span>/day</span></p>
+        </div>
+        <Badge variant={van.type}>{van.type}</Badge>
+      </Link>
+    </div>
+  ))
+
   function handleFilter(e) {
     const value = e.currentTarget?.value
     if (!value) {
@@ -44,21 +59,6 @@ export default function Vans() {
       </button>
     )
   }
-
-  const vansToShow = typeFilter.length > 0 ? vans.filter(van => typeFilter.includes(van.type)) : vans
-
-  const vanItems = vansToShow.map(van => (
-    <div key={van.id} className="van-item">
-      <Link to={`${van.id}`}>
-        <img className="van-item__image" src={van.imageUrl} alt="A van" />
-        <div className="van-item__container">
-          <p className="van-item__name">{van.name}</p>
-          <p className="van-item__price">${van.price}<span>/day</span></p>
-        </div>
-        <Badge variant={van.type}>{van.type}</Badge>
-      </Link>
-    </div>
-  ))
 
   return (
     <div className="padded flow">
