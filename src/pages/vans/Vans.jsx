@@ -42,14 +42,13 @@ export default function Vans() {
     if (!value) {
       return
     }
-    setSearchParams(sp => {
-      if (value === "clear") {
-        sp.delete("type")
-      } else {
-        sp.has("type", value) ? sp.delete("type", value) : sp.append("type", value)
-      }
-      return sp
-    })
+    const sp = new URLSearchParams(searchParams)
+    if (value === "clear") {
+      sp.delete("type")
+    } else {
+      sp.has("type", value) ? sp.delete("type", value) : sp.append("type", value)
+    }
+    setSearchParams(sp)
   }
 
   function filterButton(value) {
@@ -69,7 +68,7 @@ export default function Vans() {
         {filterButton("simple")}
         {filterButton("luxury")}
         {filterButton("rugged")}
-        {typeFilter.length > 0 && <button onClick={handleFilter} value="clear" className="clear-filters-button">Clear filters</button>}
+        {typeFilter.length > 0 && <button onClick={handleFilter} value="clear" className="show-all-button">Show all</button>}
       </div>
       {vans && <div className="van-list">
         {vanItems}
