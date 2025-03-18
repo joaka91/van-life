@@ -41,13 +41,16 @@ export default function Vans() {
     if (!value) {
       return
     }
-    const sp = new URLSearchParams(searchParams)
-    if (value === "clear") {
+    setSearchParams(sp => {
       sp.delete("type")
-    } else {
-      sp.has("type", value) ? sp.delete("type", value) : sp.append("type", value)
-    }
-    setSearchParams(sp)
+      if (value !== "clear") {
+        const newTypeFilter = typeFilter.includes(value) ? typeFilter.filter(el => el !== value) : [...typeFilter, value]
+        for (const el of newTypeFilter) {
+          sp.append("type", el)
+        }
+      }
+      return sp
+    })
   }
 
   function filterButton(value) {
