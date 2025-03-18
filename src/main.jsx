@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router'
 import makeServer from "./server"
 import Home from "./pages/Home"
 import About from "./pages/About"
+import NotFound from "./pages/NotFound"
 import Vans from "./pages/vans/Vans"
 import Van from "./pages/vans/Van"
 import Dashboard from "./pages/host/Dashboard"
@@ -45,6 +46,7 @@ function App() {
             </Route>
             <Route path="reviews" element={<Reviews />} />
           </Route>
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
