@@ -25,7 +25,7 @@ export default function Vans() {
 
   const vanItems = vansToShow.map(van => (
     <div key={van.id} className="van-item">
-      <Link to={`${van.id}`}>
+      <Link to={`${van.id}`} state={{ query: `?${searchParams.toString()}` }}>
         <img className="van-item__image" src={van.imageUrl} alt="A van" />
         <div className="van-item__container">
           <p className="van-item__name">{van.name}</p>

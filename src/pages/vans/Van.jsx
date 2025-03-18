@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router"
+import { useLocation, useParams, Link } from "react-router"
 import Badge from "../../components/Badge"
 
 export default function Van() {
   const [van, setVan] = useState(null)
   const { id } = useParams()
+  const location = useLocation()
+  const prevQuery = location.state?.query?.length > 1 ? location.state.query : ""
   
   useEffect(() => {
     fetch(`/api/vans/${id}`)
@@ -19,8 +21,9 @@ export default function Van() {
   }, [])
 
   return (
-    <>
-      {van && <div className="van padded">
+    <div className="padded flow">
+      <Link to={`..${prevQuery}`} className="back-link">&larr; Back to all vans</Link>
+      {van && <div className="van">
         <img src={van.imageUrl} alt="" className="van__image" />
         <Badge variant={van.type}>{van.type}</Badge>
         <h2 className="van__name">{van.name}</h2>
@@ -28,6 +31,6 @@ export default function Van() {
         <p className="van__description">{van.description}</p>
         <button className="cta">Rent this van</button>
       </div>}
-    </>
+    </div>
   )
 }
