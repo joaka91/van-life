@@ -14,7 +14,7 @@ export default function Vans() {
         }
         return res.json()
       })
-      .then(json =>setVans(json.vans))
+      .then(json => setVans(json.vans))
       .catch(e => console.error(e))
   }, [])
 
