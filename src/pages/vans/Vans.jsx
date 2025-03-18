@@ -67,7 +67,7 @@ export default function Vans() {
         {filterButton("simple")}
         {filterButton("luxury")}
         {filterButton("rugged")}
-        {typeFilter.length > 0 && <button onClick={handleFilter} value="clear" className="show-all-button">Show all</button>}
+        {typeFilter.length > 0 && <button onClick={handleFilter} value="clear" className="clear-filter">Clear filter</button>}
       </div>
       {vans && <div className="van-list">
         {vanItems}
