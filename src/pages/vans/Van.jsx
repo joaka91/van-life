@@ -22,7 +22,7 @@ export default function Van() {
 
   return (
     <div className="padded flow">
-      <Link to={`..${prevQuery}`} className="back-link">&larr; Back to all vans</Link>
+      <Link to={`..${prevQuery}`} className="back-link">&larr; Back to {prevQuery ? "search results" : "all vans"}</Link>
       {van && <div className="van">
         <img src={van.imageUrl} alt="" className="van__image" />
         <Badge variant={van.type}>{van.type}</Badge>
