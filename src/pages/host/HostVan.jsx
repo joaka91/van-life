@@ -4,13 +4,16 @@ import useFetch from "../../useFetch"
 
 export default function HostVan() {
   const { id } = useParams()
-  const { data } = useFetch(`/api/host/vans/${id}`)
+  const { data, loading, error } = useFetch(`/api/host/vans/${id}`)
   const van = data?.van
 
   return (
     <>
       <Link to=".." className="back-link">&larr; Back to all vans</Link>
-      {van && <div className="host-van flow">
+
+      {(loading || error) && <h1 style={{paddingBottom:"2rem"}}>{loading ? "Loading van..." : `There was an error: ${error.message}`}</h1>}
+
+      {(van && !loading && !error) && <div className="host-van flow">
         <div className="host-van__top">
           <div className="host-van__image"><img src={van.imageUrl} alt="Van" /></div>
           <div className="host-van__top-content">

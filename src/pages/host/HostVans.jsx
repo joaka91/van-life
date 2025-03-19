@@ -2,10 +2,10 @@ import { Link } from "react-router"
 import useFetch from "../../useFetch"
 
 export default function HostVans() {
-  const { data } = useFetch("/api/host/vans")
-  const vans = data ? data.vans : []
+  const { data, loading, error } = useFetch("/api/host/vans")
+  const vans = data?.vans
 
-  const vanItems = vans.map(van => (
+  const vanItems = vans?.map(van => (
     <div className="host-van-item" key={van.id}>
       <Link to={`${van.id}`}>
           <div className="host-van-item__inner">
@@ -21,10 +21,14 @@ export default function HostVans() {
 
   return (
     <>
-      <h1>Your listed vans</h1>
-      {vans && <div className="host-van-list">
-        {vanItems}
-      </div>}
+      {(loading || error) && <h1 style={{paddingBottom:"2rem"}}>{loading ? "Loading vans..." : `There was an error: ${error.message}`}</h1>}
+      
+      {(vans && !loading && !error) && <>
+        <h1>Your listed vans</h1>
+        <div className="host-van-list">
+          {vanItems}
+        </div>
+      </>}
     </>
   )
 }

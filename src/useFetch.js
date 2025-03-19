@@ -3,13 +3,9 @@ import { useEffect, useState } from "react";
 export default function useFetch(url) {
   const [data, setData] = useState(null)
   const [error, setError] = useState(null)
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    setLoading(true)
-    setError(null)
-    setData(null)
-
     fetch(url)
       .then(res => {
         if (!res.ok) {

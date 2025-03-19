@@ -5,14 +5,14 @@ import useFetch from "../../useFetch"
 
 export default function Vans() {
   const { data, loading, error } = useFetch("/api/vans")
-  const vans = data ? data.vans : []
+  const vans = data?.vans
 
   const [searchParams, setSearchParams] = useSearchParams()
   const typeFilter = searchParams.getAll("type")
 
-  const vansToShow = typeFilter.length > 0 ? vans.filter(van => typeFilter.includes(van.type)) : vans
+  const vansToShow = typeFilter.length > 0 ? vans?.filter(van => typeFilter.includes(van.type)) : vans
 
-  const vanItems = vansToShow.map(van => (
+  const vanItems = vansToShow?.map(van => (
     <div key={van.id} className="van-item">
       <Link to={`${van.id}`} state={{ query: `?${searchParams.toString()}` }}>
         <img className="van-item__image" src={van.imageUrl} alt="A van" />
@@ -54,16 +54,20 @@ export default function Vans() {
 
   return (
     <div className="padded flow">
-      <h1>Explore our van options</h1>
-      <div className="van-list-filter">
-        {filterButton("simple")}
-        {filterButton("luxury")}
-        {filterButton("rugged")}
-        {typeFilter.length > 0 && <button onClick={handleFilter} value="clear" className="clear-filter">Clear filter</button>}
-      </div>
-      {vans && <div className="van-list">
-        {vanItems}
-      </div>}
+      {(loading || error) && <h1 style={{paddingBottom:"2rem"}}>{loading ? "Loading vans..." : `There was an error: ${error.message}`}</h1>}
+      
+      {(vans && !loading && !error) && <>
+        <h1>Explore our van options</h1>
+        <div className="van-list-filter">
+          {filterButton("simple")}
+          {filterButton("luxury")}
+          {filterButton("rugged")}
+          {typeFilter.length > 0 && <button onClick={handleFilter} value="clear" className="clear-filter">Clear filter</button>}
+        </div>
+        <div className="van-list">
+          {vanItems}
+        </div>
+      </>}
     </div>
   )
 }

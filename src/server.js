@@ -1,4 +1,4 @@
-import { createServer, Model } from "miragejs";
+import { createServer, Model, Response } from "miragejs";
 
 export default function() {
   createServer({
@@ -17,6 +17,7 @@ export default function() {
 
     routes() {
       this.namespace = "api"
+      this.timing = 1000
 
       this.get("/vans", (schema, request) => {
         return schema.vans.all()
@@ -26,12 +27,12 @@ export default function() {
         const id = request.params.id
         return schema.vans.find(id)
       })
-
+      
       this.get("/host/vans", (schema, request) => {
         // Hard-code the hostId for now
         return schema.vans.where({ hostId: "123" })
       })
-
+      
       this.get("/host/vans/:id", (schema, request) => {
         // Hard-code the hostId for now
         const id = request.params.id
