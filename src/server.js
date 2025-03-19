@@ -17,7 +17,7 @@ export default function() {
 
     routes() {
       this.namespace = "api"
-      this.timing = 1000
+      this.timing = 0
 
       this.get("/vans", (schema, request) => {
         return schema.vans.all()
