@@ -11,7 +11,7 @@ export default function Login() {
 
   return (
     <div className="padded flow center">
-      {location.state && <p>{location.state.message}</p>}
+      {location.state && <p><strong>{location.state.message}</strong></p>}
       <h1>Sign in to your account</h1>
       <div>
         <form action={login} className="login-form">
