@@ -1,22 +1,11 @@
-import { useEffect, useState } from "react"
 import { Link, useSearchParams } from "react-router"
 import Badge from "../../components/Badge"
 import clsx from "clsx"
+import useFetch from "../../useFetch"
 
 export default function Vans() {
-  const [vans, setVans] = useState([])
-
-  useEffect(() => {
-    fetch("/api/vans")
-      .then(res => {
-        if (!res.ok) {
-          throw new Error(`Response status: ${res.status}`)
-        }
-        return res.json()
-      })
-      .then(json => setVans(json.vans))
-      .catch(e => console.error(e))
-  }, [])
+  const { data, loading, error } = useFetch("/api/vans")
+  const vans = data ? data.vans : []
 
   const [searchParams, setSearchParams] = useSearchParams()
   const typeFilter = searchParams.getAll("type")

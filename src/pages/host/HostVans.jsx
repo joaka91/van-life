@@ -1,20 +1,9 @@
-import { useEffect, useState } from "react"
 import { Link } from "react-router"
+import useFetch from "../../useFetch"
 
 export default function HostVans() {
-  const [vans, setVans] = useState([])
-
-  useEffect(() => {
-    fetch("/api/host/vans")
-      .then(res => {
-        if (!res.ok) {
-          throw new Error(`Response status: ${res.status}`)
-        }
-        return res.json()
-      })
-      .then(json => setVans(json.vans))
-      .catch(e => console.error(e))
-  }, [])
+  const { data } = useFetch("/api/host/vans")
+  const vans = data ? data.vans : []
 
   const vanItems = vans.map(van => (
     <div className="host-van-item" key={van.id}>

@@ -1,22 +1,11 @@
-import { useEffect, useState } from "react"
 import { Link, useParams, Outlet, NavLink } from "react-router"
 import Badge from "../../components/Badge"
+import useFetch from "../../useFetch"
 
 export default function HostVan() {
-  const [van, setVan] = useState(null)
   const { id } = useParams()
-
-  useEffect(() => {
-    fetch(`/api/host/vans/${id}`)
-      .then(res => {
-        if (!res.ok) {
-          throw new Error(`Response status: ${res.status}`)
-        }
-        return res.json()
-      })
-      .then(json => setVan(json.van))
-      .catch(e => console.error(e))
-  }, [])
+  const { data } = useFetch(`/api/host/vans/${id}`)
+  const van = data?.van
 
   return (
     <>

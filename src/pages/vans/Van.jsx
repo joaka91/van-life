@@ -1,25 +1,15 @@
-import { useEffect, useState } from "react"
 import { useLocation, useParams, Link } from "react-router"
 import Badge from "../../components/Badge"
+import useFetch from "../../useFetch"
 
 export default function Van() {
-  const [van, setVan] = useState(null)
   const { id } = useParams()
+  const { data, loading } = useFetch(`/api/vans/${id}`)
+  const van = data?.van
+
   const location = useLocation()
   const prevQuery = location.state?.query?.length > 1 ? location.state.query : ""
   
-  useEffect(() => {
-    fetch(`/api/vans/${id}`)
-      .then(res => {
-        if (!res.ok) {
-          throw new Error(`Response status: ${res.status}`)
-        }
-        return res.json()
-      })
-      .then(json => setVan(json.van))
-      .catch(e => console.error(e))
-  }, [])
-
   return (
     <div className="padded flow">
       <Link to={`..${prevQuery}`} className="back-link">&larr; Back to {prevQuery ? "search results" : "all vans"}</Link>

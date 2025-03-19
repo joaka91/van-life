@@ -17,14 +17,9 @@ export default function useFetch(url) {
         }
         return res.json()
       })
-      .then(json => {
-        setData(json)
-        setLoading(false)
-      })
-      .catch(e => {
-        setLoading(false)
-        setError(e)
-      })
+      .then(json => setData(json))
+      .catch(e => setError(e))
+      .finally(() => setLoading(false))
   }, [url])
 
   return { data, error, loading }
