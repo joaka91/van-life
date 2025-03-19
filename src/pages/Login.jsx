@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useLocation } from "react-router";
 
 export default function Login() {
   const [loginFormData, setLoginFormData] = useState({ email: "", password: "" })
+  const location = useLocation()
 
   function login(formData) { 
     setLoginFormData({email: formData.get("email"), password: formData.get("password")})
@@ -9,6 +11,7 @@ export default function Login() {
 
   return (
     <div className="padded flow center">
+      {location.state && <p>{location.state.message}</p>}
       <h1>Sign in to your account</h1>
       <div>
         <form action={login} className="login-form">
