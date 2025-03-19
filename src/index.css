@@ -62,12 +62,22 @@ img {
   object-fit: cover;
 }
 
+input {
+  width: 100%;
+  padding: .75rem;
+  font: inherit;
+  border: 1px solid hsl(0 0% 0% / .25);
+  border-radius: .25rem;
+}
+
 nav {
   display: flex;
+  align-items: flex-end;
   gap: 1rem;
   font-size: .875rem;
 }
 nav a {
+  line-height: 1;
   opacity: .375;
   transition: opacity 250ms;
 }
@@ -408,4 +418,39 @@ a:hover .van-item__name {
 }
 .not-found .btn {
   margin-top: 4rem;
+}
+
+.login-icon {
+  display: block;
+  position: relative;
+  width: 1.125rem;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+.login-icon::before,
+.login-icon::after {
+  content: "";
+  position: absolute;
+  background-color: var(--clr-dark);
+  border-radius: 50%;
+}
+.login-icon::before {
+  inset: 27%;
+  transform: translateY(-20%);
+}
+.login-icon::after {
+  inset: -30%;
+  transform: translateY(65%);
+}
+
+.center {
+  text-align: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
