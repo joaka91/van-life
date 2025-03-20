@@ -45,6 +45,10 @@ button {
   font: inherit;
   color: inherit;
 }
+button:disabled {
+  opacity: .5;
+  cursor: default;
+}
 
 h1, h2 {
   line-height: 1.2;

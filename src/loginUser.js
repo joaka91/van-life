@@ -5,7 +5,7 @@ export async function loginUser(creds) {
   const data = await res.json()
 
   if (!res.ok) {
-    throw new Error(`${res.status} (${res.statusText}): ${data.message}`)
+    throw new Error(`${data.message}`)
   }
 
   return data

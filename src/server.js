@@ -15,7 +15,7 @@ export default function() {
       server.create("van", { name: "The Cruiser", price: 120, description: "The Cruiser is a van for those who love to travel in comfort and luxury. With its many windows, spacious interior and ample storage space, the Cruiser offers a beautiful view wherever you go.", imageUrl: "https://assets.scrimba.com/advanced-react/react-router/the-cruiser.png", type: "luxury", hostId: "123" })
       server.create("van", { name: "Green Wonder", price: 70, description: "With this van, you can take your travel life to the next level. The Green Wonder is a sustainable vehicle that's perfect for people who are looking for a stylish, eco-friendly mode of transport that can go anywhere.", imageUrl: "https://assets.scrimba.com/advanced-react/react-router/green-wonder.png", type: "rugged", hostId: "123" })
     
-      server.create("user", { email: "j@k.com", password: "pass", name: "Joakim" })
+      server.create("user", { email: "j@k.com", password: "p123", name: "Joakim" })
     },
 
     routes() {
@@ -55,7 +55,7 @@ export default function() {
           user: foundUser,
           token: "Enjoy your pizza, here's your token."
         }
-      })
+      }, { timing: 2000 })
     }
   })
 }

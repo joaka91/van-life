@@ -9,6 +9,7 @@ export default function Header() {
         <NavLink to="about">About</NavLink>
         <NavLink to="vans">Vans</NavLink>
         <NavLink to="login"><span className="login-icon"></span></NavLink>
+        <button onClick={() => localStorage.removeItem("loggedin")}>❌</button>
       </nav>
     </header>
   )
